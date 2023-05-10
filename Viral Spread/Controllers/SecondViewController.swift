@@ -47,30 +47,32 @@ class SecondViewController: UIViewController {
     }()
     
     private lazy var viewForZoom: UIView = {
-        let view = UIView(frame: CGRect(
-            x: .zero,
-            y: .zero,
-            width: view.bounds.width,
-            height: view.bounds.height
-        ))
+//        let view = UIView(frame: CGRect(
+//            x: .zero,
+//            y: .zero,
+//            width: view.bounds.width,
+//            height: view.bounds.height
+//        ))
+        let view = UIView()
         view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var myScroll: UIScrollView = {
         let scroll = UIScrollView()
         scroll.backgroundColor = .clear
-        scroll.frame = view.bounds
         scroll.contentSize = contentSize
         scroll.minimumZoomScale = 0.5
         scroll.maximumZoomScale = 5.0
+        scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
     
     private var contentSize: CGSize {
         CGSize(
             width: view.bounds.width,
-            height: view.bounds.height
+            height: view.bounds.height - 200
         )
     }
     
@@ -112,6 +114,17 @@ class SecondViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            
+            myScroll.topAnchor.constraint(equalTo: view.topAnchor),
+            myScroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            myScroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            myScroll.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            viewForZoom.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            viewForZoom.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            viewForZoom.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            viewForZoom.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
             collectionView.topAnchor.constraint(equalTo: viewForZoom.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: viewForZoom.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: viewForZoom.trailingAnchor),
