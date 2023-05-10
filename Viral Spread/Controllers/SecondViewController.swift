@@ -15,10 +15,6 @@ class SecondViewController: UIViewController {
     
     private let manager = CalculationManager()
     
-//    deinit {
-//        print(#function)
-//    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         manager.timer?.invalidate()
@@ -47,12 +43,6 @@ class SecondViewController: UIViewController {
     }()
     
     private lazy var viewForZoom: UIView = {
-//        let view = UIView(frame: CGRect(
-//            x: .zero,
-//            y: .zero,
-//            width: view.bounds.width,
-//            height: view.bounds.height
-//        ))
         let view = UIView()
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -103,7 +93,6 @@ class SecondViewController: UIViewController {
         myScroll.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
-        
     }
     
     private func setupElements() {
@@ -147,9 +136,8 @@ class SecondViewController: UIViewController {
         for value in 1...totalNumberOfPeople {
             var humanModel = HumanModel()
             humanModel.peopleAround = radiusAroundPeople2(value: value, people: manager.numberOfPeople)
-            //print("добавлено окружение к человека № \(value) - \(humanModel.peopleAround)")
             intermediateArray.append(humanModel)
-            if intermediateArray.count == manager.maxNumberPeopleInSection || value == totalNumberOfPeople { // -1 ПРОВЕРИТЬ!!!!!!
+            if intermediateArray.count == manager.maxNumberPeopleInSection || value == totalNumberOfPeople {
                 manager.arrayHumanModel.append(intermediateArray)
                 intermediateArray = [HumanModel]()
             }
@@ -164,7 +152,7 @@ class SecondViewController: UIViewController {
     ///   - totalSections: номер последней секции
     ///   - indexesInLastSection: количество индексов в последней секции
     /// - Returns: количество элементов в необходимой секции
-    func numberOfCellsInSection(section: Int, totalSections: Int, indexesInLastSection: Int) -> Int {
+    private func numberOfCellsInSection(section: Int, totalSections: Int, indexesInLastSection: Int) -> Int {
         section < totalSections ? 5 : indexesInLastSection
     }
     
@@ -173,7 +161,7 @@ class SecondViewController: UIViewController {
     ///   - value: номер элемента по порядку из общего числа элементов
     ///   - people: общее количество элементов
     /// - Returns: Сет с окружением текущего элемента
-    func radiusAroundPeople2(value: Int, people: Int) -> Set<[Int]> {
+    private func radiusAroundPeople2(value: Int, people: Int) -> Set<[Int]> {
         
         var intermediateSet = Set<[Int]>()
         
@@ -279,12 +267,9 @@ extension SecondViewController: UICollectionViewDelegateFlowLayout {
         
         let widthAvailbleForAllItems =  (collectionView.frame.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right)
         
-        // Suppose we have to create nColunmns
-        // widthForOneItem achieved by sunbtracting item spacing if any
-        
+        // widthForOneItem достигается за счет уменьшения интервала между элементами, если он есть
         let widthForOneItem = widthAvailbleForAllItems / CGFloat(manager.maxNumberPeopleInSection) - flowLayout.minimumInteritemSpacing
         
-        // here height is mentioned in xib file or storyboard
         return CGSize(width: CGFloat(widthForOneItem), height: (widthForOneItem * 2))
     }
     
@@ -293,7 +278,6 @@ extension SecondViewController: UICollectionViewDelegateFlowLayout {
             manager.infectAfterClick(indexPath: indexPath)
         }
     }
-    
 }
 
 //MARK: - Extension - UIScrollViewDelegate
@@ -310,8 +294,6 @@ extension SecondViewController: CalculationManagerDelegate {
     
     func reloadData(indexPath: [IndexPath]) {
         DispatchQueue.main.async { [self] in
-            //self.collectionView.reloadData()
-            
             collectionView.performBatchUpdates {
                 collectionView.reloadItems(at: indexPath)
             }
