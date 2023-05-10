@@ -12,6 +12,13 @@
 		81DC0FF62A04117100DE2EC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC0FF52A04117100DE2EC7 /* ViewController.swift */; };
 		81DC0FFB2A04117300DE2EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81DC0FFA2A04117300DE2EC7 /* Assets.xcassets */; };
 		81DC0FFE2A04117300DE2EC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DC0FFC2A04117300DE2EC7 /* LaunchScreen.storyboard */; };
+		81DC10072A044A1300DE2EC7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC10062A044A1300DE2EC7 /* MainView.swift */; };
+		81DC10092A044F0800DE2EC7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC10082A044F0800DE2EC7 /* SecondViewController.swift */; };
+		81DC10102A04F97500DE2EC7 /* CellForCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC100F2A04F97500DE2EC7 /* CellForCollection.swift */; };
+		81DC10152A056A3200DE2EC7 /* HumanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC10142A056A3200DE2EC7 /* HumanModel.swift */; };
+		81DC10172A08E76D00DE2EC7 /* ViewForNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC10162A08E76D00DE2EC7 /* ViewForNavigationBar.swift */; };
+		81DC10192A0BCB6B00DE2EC7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC10182A0BCB6B00DE2EC7 /* CustomTextField.swift */; };
+		81DC101C2A0BD1A400DE2EC7 /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC101B2A0BD1A400DE2EC7 /* CalculationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		81DC0FFA2A04117300DE2EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81DC0FFD2A04117300DE2EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81DC0FFF2A04117300DE2EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81DC10062A044A1300DE2EC7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		81DC10082A044F0800DE2EC7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		81DC100F2A04F97500DE2EC7 /* CellForCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellForCollection.swift; sourceTree = "<group>"; };
+		81DC10142A056A3200DE2EC7 /* HumanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanModel.swift; sourceTree = "<group>"; };
+		81DC10162A08E76D00DE2EC7 /* ViewForNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForNavigationBar.swift; sourceTree = "<group>"; };
+		81DC10182A0BCB6B00DE2EC7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		81DC101B2A0BD1A400DE2EC7 /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,69 @@
 		81DC0FF02A04117100DE2EC7 /* Viral Spread */ = {
 			isa = PBXGroup;
 			children = (
-				81DC0FF12A04117100DE2EC7 /* AppDelegate.swift */,
-				81DC0FF32A04117100DE2EC7 /* SceneDelegate.swift */,
-				81DC0FF52A04117100DE2EC7 /* ViewController.swift */,
+				81DC100B2A044F5200DE2EC7 /* App */,
+				81DC10132A056A0700DE2EC7 /* Model */,
+				81DC10052A04494C00DE2EC7 /* View */,
+				81DC100A2A044F2900DE2EC7 /* Controllers */,
+				81DC101A2A0BD16500DE2EC7 /* Calculation */,
+				81DC101D2A0BD4DB00DE2EC7 /* CellForCollection */,
 				81DC0FFA2A04117300DE2EC7 /* Assets.xcassets */,
 				81DC0FFC2A04117300DE2EC7 /* LaunchScreen.storyboard */,
 				81DC0FFF2A04117300DE2EC7 /* Info.plist */,
 			);
 			path = "Viral Spread";
+			sourceTree = "<group>";
+		};
+		81DC10052A04494C00DE2EC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81DC10062A044A1300DE2EC7 /* MainView.swift */,
+				81DC10182A0BCB6B00DE2EC7 /* CustomTextField.swift */,
+				81DC10162A08E76D00DE2EC7 /* ViewForNavigationBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81DC100A2A044F2900DE2EC7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81DC0FF52A04117100DE2EC7 /* ViewController.swift */,
+				81DC10082A044F0800DE2EC7 /* SecondViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		81DC100B2A044F5200DE2EC7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				81DC0FF12A04117100DE2EC7 /* AppDelegate.swift */,
+				81DC0FF32A04117100DE2EC7 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		81DC10132A056A0700DE2EC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81DC10142A056A3200DE2EC7 /* HumanModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81DC101A2A0BD16500DE2EC7 /* Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				81DC101B2A0BD1A400DE2EC7 /* CalculationManager.swift */,
+			);
+			path = Calculation;
+			sourceTree = "<group>";
+		};
+		81DC101D2A0BD4DB00DE2EC7 /* CellForCollection */ = {
+			isa = PBXGroup;
+			children = (
+				81DC100F2A04F97500DE2EC7 /* CellForCollection.swift */,
+			);
+			path = CellForCollection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +204,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				81DC0FF62A04117100DE2EC7 /* ViewController.swift in Sources */,
+				81DC101C2A0BD1A400DE2EC7 /* CalculationManager.swift in Sources */,
+				81DC10102A04F97500DE2EC7 /* CellForCollection.swift in Sources */,
+				81DC10072A044A1300DE2EC7 /* MainView.swift in Sources */,
+				81DC10172A08E76D00DE2EC7 /* ViewForNavigationBar.swift in Sources */,
 				81DC0FF22A04117100DE2EC7 /* AppDelegate.swift in Sources */,
+				81DC10092A044F0800DE2EC7 /* SecondViewController.swift in Sources */,
 				81DC0FF42A04117100DE2EC7 /* SceneDelegate.swift in Sources */,
+				81DC10152A056A3200DE2EC7 /* HumanModel.swift in Sources */,
+				81DC10192A0BCB6B00DE2EC7 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
